@@ -16,10 +16,12 @@ const CreateLogo = () => {
 
     const onHandleInputChange = (field, value) => {
         setFormData({
-            ...prev,
+            ...formData,
             [field]: value
         });
     }
+
+    console.log(formData)
 
     return (
         <div className='mt-28 p-10 border rounded-xl 2xl:mx-72'>
