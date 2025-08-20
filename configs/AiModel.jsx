@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
-  apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY, // This will work in both client and server
+  apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
 });
 
 const config = {

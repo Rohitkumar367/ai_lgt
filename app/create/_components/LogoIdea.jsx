@@ -16,7 +16,7 @@ const LogoIdea = ({formData, onHandleInputChange}) => {
         if (formData?.design?.title && formData?.title) {
             generateLogoDesignIdea();
         }
-    }, [formData]);
+    }, []);
 
     const generateLogoDesignIdea = async () => {
         try {
@@ -36,10 +36,9 @@ const LogoIdea = ({formData, onHandleInputChange}) => {
 
             console.log('API Response:', result.data);
 
-            // Update this line to access the prompt property
-            if (result.data.ideas?.prompts) {
-                const promptsArray = result.data.ideas.prompts.map(item => item.prompt || item);
-                setIdeas(promptsArray);
+            // Simplified this part since ideas is already an array of strings
+            if (result.data.ideas) {
+                setIdeas(result.data.ideas);
             }
         } catch (error) {
             console.error('Error generating ideas:', error.response?.data || error.message);
