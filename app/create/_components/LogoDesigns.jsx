@@ -6,7 +6,7 @@ import Lookup from '@/app/_data/Lookup'
 import LogoDesig from '@/app/_data/LogoDesig'
 import Image from 'next/image'
 
-const LogoDesigns = (onHandleInputChange) => {
+const LogoDesigns = ({onHandleInputChange}) => {
 
     const [selectedOption, setSelectedOption] = useState();
 
@@ -16,7 +16,10 @@ const LogoDesigns = (onHandleInputChange) => {
 
             <div className='grid grid-cols-2 md:grid-cols-3 gap-10 mt-10'>
                 {LogoDesig.map((design, index)=>(
-                    <div key={index} onClick={()=>{setSelectedOption(design.title); onHandleInputChange(design)}} className={`p-1 hover:border-2 border-primary rounded-xl cursor-pointer ${selectedOption==design.title && 'border-2 border-primary'}`}>
+                    <div key={index} onClick={()=>{
+                            setSelectedOption(design.title); onHandleInputChange(design);
+                        }} className={`p-1 hover:border-2 border-primary rounded-xl cursor-pointer ${selectedOption==design.title && 'border-2 border-primary'}`}>
+
                         <Image src={design.image} alt={design.title} width={300} height={200}
                             className='w-full rounded-xl h-[150px] object-cover'
                         />

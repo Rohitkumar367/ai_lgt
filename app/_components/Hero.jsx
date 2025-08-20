@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Hero = () => {
 
-    const [logoTitle, setLogoTitle] = useState();
+    const [logoTitle, setLogoTitle] = useState('');
 
     const handleInputChange = (e) => {
         setLogoTitle(e.target.value);
