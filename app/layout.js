@@ -1,7 +1,12 @@
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
+import Provider from './provider'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const hostGrotesk = localFont({
+  src: './_fonts/HostGrotesk-VariableFont_wght.ttf',
+  variable: '--font-host-grotesk',
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Logo Maker',
@@ -11,7 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={hostGrotesk.className}>
+        <Provider>
+          {children}
+        </Provider>
+      </body>
     </html>
   )
 }
